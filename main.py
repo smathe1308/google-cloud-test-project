@@ -15,15 +15,15 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     """Return a friendly HTTP greeting."""
-    return 'Hello, Welcome to customers database : Enter /customers to list all customers or /customer?name=cust_name to get a single customer detail'
+    return 'Hello, Welcome to customers database : Enter /getCustomers to list all customers or /getCustomer?name=cust_name to get a single customer detail'
 
 	
 ###############################################################################################
 # Get all customers from the datastore.                                                       #
-# http://127.0.0.1:5000/customers will give a json string of all the customers from           #
+# http://127.0.0.1:5000/getCustomers will give a json string of all the customers from           #
 # the datastore.                                                                              #
 ###############################################################################################
-@app.route('/customers')
+@app.route('/getCustomers')
 def get_customers():
     client = datastore.Client()
     query = client.query(kind='Customer')
@@ -33,9 +33,9 @@ def get_customers():
 
 ###############################################################################################
 # Get customer filtered by name                                                               #
-# http://127.0.0.1:5000/customer?name=xyz will show all customers by the name xyz             #
+# http://127.0.0.1:5000/getCustomer?name=xyz will show all customers by the name xyz             #
 ###############################################################################################
-@app.route('/customer')
+@app.route('/getCustomer')
 def get_customer_by_name():
     name = request.args.get('name', None)
     client = datastore.Client()
