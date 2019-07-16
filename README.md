@@ -9,22 +9,25 @@ Solution :
    Function : get_customers()
    Result : Will return all the customers in the Json format
    Example : 
-          /getCustomers will fetch all the customers
+          https://test-project-130887.appspot.com/getCustomers
           
-          [{"id": 105, "age": "33", "name": "customer5"}, {"id": 102, "age": "25", "name": "customer2"}, {"id": 104, "age": "22", "name": "customer4"}, {"id": 101, "age": 30, "name": "customer1"}, {"id": 103, "age": "34", "name": "customer3"}]
+          Response:
+          [{"name": "customer5", "id": 105, "age": "33"}, {"name": "customer2", "id": 102, "age": "25"}, {"name": "customer4", "id": 104, "age": "22"}, {"name": "customer1", "id": 101, "age": 30}, {"id": 103, "age": "34", "name": "customer3"}, {"name": "customer7", "id": 107, "age": "57"}, {"id": 106, "age": "52", "name": "customer6"}, {"name": "customer8", "id": 108, "age": "34"}]
           
-2. Get customer by Id : 
+2. Get data for a single customer filtered by id : 
    Function : get_customer_by_id()
    Result : Will fetch a result for a particular given id in Json format.
    Example : 
-          /getCustomer?id=101
+          https://test-project-130887.appspot.com/getCustomer?id=102
           
-          [{"id": 101, "age": 30, "name": "customer1"}]
+          Response:
+          [{"id": 102, "age": "25", "name": "customer2"}]
           
-3. add a new customer into the datastore.
+3. Add a new customer.
    Function : add_customer()
    Result : This will add a customer given id,name,age into the datastore.
    Example : 
-          /add?id=107&name=customer7&age=57
+          https://test-project-130887.appspot.com/add?id=109&name=customer9&age=32
           
-          A message will be shown on the webpage as "New Entity Created for Name : customer7" 
+          Response:
+          [{"id": 109, "age": "32", "name": "customer9"}] 
