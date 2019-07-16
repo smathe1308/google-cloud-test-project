@@ -35,7 +35,7 @@ def get_customers():
 
 
 #############################################################################################################
-# Get customer filtered by name                                                                             #
+# Get customer filtered by id                                                                               #
 # https://test-project-130887.appspot.com/getCustomer?id={id} will show all customers by the name xyz       #
 #############################################################################################################
 @app.route('/getCustomer')
