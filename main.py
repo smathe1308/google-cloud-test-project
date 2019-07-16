@@ -31,7 +31,7 @@ def get_customers():
         customers = list(query.fetch())
         return json.dumps(customers)
     except Exception as e:
-        return [{"Error : %s" % e}]
+        return json.dumps([{"Error : %s" % e}])
 
 
 #############################################################################################################
@@ -49,7 +49,7 @@ def get_customer_by_id():
         result = json.dumps(customer_filter)
         return result
     except Exception as e:
-        return [{"Error : %s" % e}]
+        return json.dumps([{"Error : %s" % e}])
 
 
 ####################################################################################################
@@ -78,7 +78,7 @@ def add_customer():
         result = json.dumps(customer_filter)
         return result
     except Exception as e:
-        return [{"Error : %s" % e}]
+        return json.dumps([{"Error : %s" % e}])
 
 
 if __name__ == '__main__':
